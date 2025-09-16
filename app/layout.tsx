@@ -4,8 +4,11 @@ import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
+// Derive a valid deployment URL if available (works on Vercel and locally)
+const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : undefined)
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://<your-vercel-domain>'),
+  ...(baseUrl ? { metadataBase: new URL(baseUrl) } : {}),
   title: 'Swing Accelerate - Swing Trade Alerts, Education & Tools',
   description: 'A Discord community with swing trade alerts, education, and tools designed to help traders accelerate profitability through a math-driven swing model.',
   keywords: 'swing trading, trading alerts, trading education, trading tools, Discord community, swing trades',
