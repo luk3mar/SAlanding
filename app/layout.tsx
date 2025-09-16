@@ -5,6 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://<your-vercel-domain>'),
   title: 'Swing Accelerate - Swing Trade Alerts, Education & Tools',
   description: 'A Discord community with swing trade alerts, education, and tools designed to help traders accelerate profitability through a math-driven swing model.',
   keywords: 'swing trading, trading alerts, trading education, trading tools, Discord community, swing trades',
@@ -83,7 +84,6 @@ export default function RootLayout({
                 "@type": "Offer",
                 "price": "49",
                 "priceCurrency": "USD",
-                "priceValidUntil": "2024-12-31",
                 "availability": "https://schema.org/InStock"
               }
             })
